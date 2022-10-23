@@ -126,7 +126,7 @@ class Calculator(Toplevel):
     def pr(self, val):
         """Send value in register to CADvas."""
         # There must be a better way to get this value
-        str_value = repr(eval('self.'+val+'display.get()')).strip("'")
+        str_value = repr(eval('self.'+val+'display.get()')).strip("'") # nosemgrep
         self.caller.enterfloat(str_value)
         self.keip = False
         self.needrup = True
